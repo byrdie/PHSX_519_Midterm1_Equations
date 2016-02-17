@@ -1,0 +1,128 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[10pt]{article}
+ 
+\usepackage[margin=.60in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage{multicol}
+\usepackage[subnum]{cases}
+\usepackage{relsize}
+\usepackage[makeroom]{cancel}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{calligra}
+\usepackage[normalem]{ulem}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+
+\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n} 
+\DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
+
+
+% Makes '\sr' make a script r
+\newcommand{\sr}{\ensuremath{\mathcalligra{r}}}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\ihat}{\boldsymbol{\hat{\textbf{\i}}}}
+\newcommand{\jhat}{\boldsymbol{\hat{\textbf{\j}}}}
+\newcommand{\khat}{\boldsymbol{\hat{\textbf{k}}}}
+\newcommand{\rhat}{\boldsymbol{\hat{\textbf{r}}}}
+\newcommand{\srhat}{\boldsymbol{\hat{\textbf{\sr}}}}
+\newcommand{\xhat}{\boldsymbol{\hat{\textbf{x}}}}
+\newcommand{\yhat}{\boldsymbol{\hat{\textbf{y}}}}
+\newcommand{\zhat}{\boldsymbol{\hat{\textbf{z}}}}
+\newcommand{\nhat}{\boldsymbol{\hat{\textbf{n}}}}
+\newcommand{\phihat}{\boldsymbol{\hat{\textbf{$\phi$}}}}
+
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\vc}[1]{\mathbf{#1}}
+\newcommand{\fracl}[2]{\mathlarger{\frac{#1}{#2}}}
+\newcommand{\dd}{\, \mathrm{d}}
+\newcommand{\eo}{\epsilon_0}
+\newcommand{\mo}{\mu_\circ}
+\newcommand{\tder}[2]{\frac{\dd #1}{\dd #2}}
+\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\dtder}[2]{\frac{\dd^2 #1}{\dd #2^2}}
+\newcommand{\dpder}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\intas}{ \int_{-\infty}^\infty}
+\newcommand{\wt}[1]{\widetilde{#1}}
+\newcommand{\ev}[1]{\left\langle #1 \right\rangle}
+\newcommand{\ce}{\wt{\vect{E}}}
+\newcommand{\cb}{\wt{\vect{B}}}
+\newcommand{\K}{\frac{1}{4 \pi \eo}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+
+\pagestyle{fancy}
+\lhead{Midterm 1 Equations}
+\chead{PHSX519 Electromagnetic Theory I}
+\rhead{Roy Smart}
+
+ 
+\begin{document}
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+%\title{Exam 1 Equations}%replace X with the appropriate number
+%\author{Roy Smart \\%replace with your name
+%PHSX425 Electricity \& Magnetism II} %if necessary, replace with your course title
+%\maketitle
+\begin{align*}
+& \vect{E}(\vect{x}) = \frac{1}{4 \pi \eo} \int \rho(\vect{x}') \frac{\vect{x} - \vect{x}'}{|\vect{x} - \vect{x}'|^3} d^3x' \tag*{Coulomb's Law (1.5)} \\
+& \delta(f(x)) = \sum_{i} \frac{1}{\left|\tder{f}{x}(x_i)\right|}\delta(x - x_i)	\tag*{Delta function Rule 5 } \\
+& \oint_S \vc{E} \cdot \vc{n} \; da = \frac{1}{\eo} \int_V \rho(\vc{x}) d^3x	\tag*{Gauss' Law (1.11)} \\
+& \Phi(\vc{x}) = \K \int \frac{\rho (\vc{x}')}{|\vc{x} - \vc{x}'|} d^3 x' \tag*{Scalar potential in terms of charge density (1.17)} \\
+& (\vc{E_2} - \vc{E_1}) \cdot \vc{n} = \sigma/\eo	\tag*{Electric field of a surface distribution (1.22)} \\
+& \nabla^2 \Phi = -\rho/\eo	\tag*{Poisson Equation (1.28)}\\
+& \nabla^2 \Phi = 0		\tag*{Laplace Equation (1.29)}\\
+& \nabla^2 \left( \frac{1}{|\vc{x} - \vc{x}'|} \right) = - 4 \pi \delta(\vc{x} - \vc{x}') \tag*{Laplace's equation for a point charge (1.31)} \\
+& G(\vc{x}, \vc{x}') = \frac{1}{|\vc{x} - \vc{x}'|} + F(\vc{x}, \vc{x}')	\tag*{Green's function for Poisson's equation (1.40)} \\
+& \Phi(\vc{x}) = \K \int_V \rho(\vc{x}') G_D(\vc{x}, \vc{x}') d^3x' = \frac{1}{4 \pi} \oint_S(\vc{x}') \pder{G_D}{n'} da'	\tag*{Green's function potential Dirichlet B.C.s (1.44)} \\
+& \Phi(\vc{x}) = \langle\Phi\rangle_S + \K \int_V \rho(\vc{x}') G_N(\vc{x},\vc{x}') d^3x + \frac{1}{4 \pi} \oint_S \pder{\Phi}{n'} G_N da'	\tag*{Green's function potential Neumann B.C.s (1.46)} \\
+& W = \frac{\eo}{2} \int |\vc{\nabla} \Phi|^2 d^3x = \frac{\eo}{2} \int \left| \vc{E} \right|^2 d^3 x	\tag*{Energy stored in electric field (1.54)} \\
+& V_i = \sum_{j=1}^{n} p_{ij} q_j, \; (i = 1,2,...,n)	\tag*{Potentials on conductors in terms of the inverse capacitance matrix.} \\
+& Q_i = \sum_{j=1}^{n} C_{ij} V_j, \; (i=1,2,...,n) \tag*{Charges on conductors in terms of the capactiance matrix (1.62)} \\
+& W = \frac{1}{2} \sum_{i=1}^{n} Q_i V_i = \frac{1}{2} \sum_{i=1}^n \sum_{j=1}^{n} C_{ij} V_i V_j	\tag*{Potential energy of conductor system (1.62)} \\
+& q' = -\frac{a}{y} q, \quad y' = \frac{a^2}{y}		\tag*{Magnitude and position of image charge on sphere (2.4)} \\
+& \Phi = -E_0 \left( r - \frac{a^3}{r^2} \right)	\tag*{Electric field of conducting sphere in uniform Electric field (2.14)} \\
+& \frac{1}{|\vc{x} - \vc{x}'|} = 4 \pi \sum_{\ell = 0}^\infty \sum_{m = -\ell}^{\ell} \frac{1}{2 \ell +1} \frac{r_<^\ell}{r_>^{\ell +1}} Y_{\ell m}^*(\theta', \phi') Y_{\ell m}(\theta,\phi)	\tag*{Green's function expansion in spherical coordinates (3.70)} \\
+& \text{Where $r_< (r_>)$ is the smaller (larger) of $|\vc{x}|$ and $|\vc{x}'|$}
+\end{align*}
+
+{\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{| l | c | c |} \hline
+& Wiggly & Decaying \\ \hline
+Cartesian &$ e^{\pm i k_n x}, \; A \cos(k_n x) + B\sin(k_n x)$ & $e^{\pm k_n x}, \; A \cosh( k_n x) + B \sinh(k_n x)$ \\ \hline
+Cylindrical (3D)& $e^{i m \phi}, \; J_m(k_n \rho), \; Y_m(k_n \rho)$ & $I_m(k_n \rho), \; K_m(k_n \rho)$ \\ \hline
+Cylindrical (2D)& $e^{i m \phi}$ & $A_0 + B_0 \ln \rho + \sum A_m \rho^m + B_m \rho^{-m}$ \\ \hline
+Spherical ($\phi$ symmetry) & $P_\ell(\cos \theta)$ & $A \left( \frac{r}{a} \right)^\ell + B \big( \frac{r}{a} \big)^{-(\ell+1)} $ \\ \hline
+Spherical (No $\phi$ symmetry) & $Y_{\ell m}(\theta, \phi)$ &  $A \left( \frac{r}{a} \right)^\ell + B \big( \frac{r}{a} \big)^{-(\ell+1)} $ \\ \hline
+\end{tabular}
+
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}

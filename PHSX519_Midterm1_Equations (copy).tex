@@ -1,0 +1,160 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[10pt]{article}
+ 
+\usepackage[margin=.60in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage{multicol}
+\usepackage[subnum]{cases}
+\usepackage{relsize}
+\usepackage[makeroom]{cancel}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{calligra}
+\usepackage[normalem]{ulem}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+
+\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n} 
+\DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
+
+
+% Makes '\sr' make a script r
+\newcommand{\sr}{\ensuremath{\mathcalligra{r}}}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\ihat}{\boldsymbol{\hat{\textbf{\i}}}}
+\newcommand{\jhat}{\boldsymbol{\hat{\textbf{\j}}}}
+\newcommand{\khat}{\boldsymbol{\hat{\textbf{k}}}}
+\newcommand{\rhat}{\boldsymbol{\hat{\textbf{r}}}}
+\newcommand{\srhat}{\boldsymbol{\hat{\textbf{\sr}}}}
+\newcommand{\xhat}{\boldsymbol{\hat{\textbf{x}}}}
+\newcommand{\yhat}{\boldsymbol{\hat{\textbf{y}}}}
+\newcommand{\zhat}{\boldsymbol{\hat{\textbf{z}}}}
+\newcommand{\nhat}{\boldsymbol{\hat{\textbf{n}}}}
+\newcommand{\phihat}{\boldsymbol{\hat{\textbf{$\phi$}}}}
+
+\newcommand{\vect}[1]{\boldsymbol{\vec{#1}}}
+\newcommand{\fracl}[2]{\mathlarger{\frac{#1}{#2}}}
+\newcommand{\dd}{\, \mathrm{d}}
+\newcommand{\eo}{\epsilon_\circ}
+\newcommand{\mo}{\mu_\circ}
+\newcommand{\tder}[2]{\frac{\dd #1}{\dd #2}}
+\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\dtder}[2]{\frac{\dd^2 #1}{\dd #2^2}}
+\newcommand{\dpder}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\intas}{ \int_{-\infty}^\infty}
+\newcommand{\wt}[1]{\widetilde{#1}}
+\newcommand{\ev}[1]{\left\langle #1 \right\rangle}
+\newcommand{\ce}{\wt{\vect{E}}}
+\newcommand{\cb}{\wt{\vect{B}}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+
+\pagestyle{fancy}
+\lhead{Midterm 2 Equations}
+\chead{PHSX425 Electricity \& Magnetism II}
+\rhead{Roy Smart, Jackson Remington}
+
+ 
+\begin{document}
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+%\title{Exam 1 Equations}%replace X with the appropriate number
+%\author{Roy Smart \\%replace with your name
+%PHSX425 Electricity \& Magnetism II} %if necessary, replace with your course title
+%\maketitle
+\begin{align*}
+\intertext{Maxwell}
+&\oint \vect{E} \cdot \dd \vect{a} = \frac{1}{\epsilon_0} Q_{enc}, \quad \oint \vect{B} \cdot \dd \vect{l} = \mu_0 I_{enc}, \quad \oint \vect{E}_{Ind} \cdot \dd \vect{l} = -\tder{\Phi}{t} \tag*{Gauss, Amp\'ere, Faraday}\\
+%&\oint \vect{B} \cdot \dd \vect{l} = \mu_0 I_{enc} \tag*{Amp\'eres law, integral form, Eq. (5.57)}\\
+%&\oint \vect{E}_{Ind} \cdot \dd \vect{l} = -\tder{\Phi}{t} \tag*{Integral form of Faraday's law, Eq. (7.19)} \\
+& \tder{W}{t} = \int_V \left(\vect{E} \cdot \vect{J}_f \right) \dd \tau =  \tder{}{t} \int_V \frac{1}{2} \left(\epsilon_0 E^2 + \frac{1}{\mu_0} B^2\right) - \frac{1}{\mu_0} \oint_S \left(\vect{E} \times \vect{B}\right) \cdot \dd \vect{a} \tag*{Poynting's theorem, Eq. (8.9)}\\
+&\vect{J}_f = \sigma \vect{E}, \qquad \Phi \equiv \int \vect{B} \cdot \dd \vect{a}, \qquad \varepsilon = -\tder{\Phi}{t} \tag*{Ohm's Law, Magnetic Flux, Eq. (9.117, 7.12-7.13)} \\
+\intertext{Waves}
+&\dpder{f}{z} = \frac{1}{v^2} \dpder{f}{t} \tag*{Wave Equation, Eq. (9.2)} \\
+&f(x,t) = A\cos[k(x-vt) + \delta] + B \cos [k(x+vt) + \delta] \tag*{Gen. sol. to the wave equation}\\
+&\lambda = \frac{2 \pi}{k}, \qquad T = \frac{2 \pi}{kv} = \frac{1}{\nu} = \frac{\lambda}{v}, \qquad w= kv =2 \pi, \qquad n = \frac{ck}{\omega}\tag*{wave relations} \\
+\intertext{Monochromatic Plane Waves in Vacuum}
+&\wt{\vect{E}}(\vect{r}, t) = \tilde{E_0}e^{i(\vect{k}\cdot \vect{r} - \omega t)} \nhat \tag*{Electric field of plane wave in $\zhat$ direction Eq. (9.49i)} \\
+&\wt{\vect{B}}(\vect{r}, t) = \frac{1}{c}\tilde{E_0}e^{i(\vect{k}\cdot \vect{r} - \omega t)} (\khat \times \nhat) = \frac{1}{c}\khat \times \wt{\vect{E}} \tag*{magnetic field plane wave Eq. (9.49ii)} \\
+&\nhat \cdot \khat = 0 \tag*{Transverse wave polarization vector Eq. (9.50)} \\
+& u=\epsilon_0 E_0^2\cos^2(kz-wt+\delta) \tag*{Energy density of plane wave Eq. (9.55)} \\
+& \vect{S} = c\eo E_0^2 \cos^2(kz-wt + \delta)  \tag*{Transported energy per unit area, per unit time Eq. (9.56)}\\
+& I \equiv \ev{S} \tag*{Intensity of plane wave Eq. (9.63)}
+\intertext{Energy and Momentum in Electromagnetic Waves}
+& P = \frac{1}{2}\eo E_0^2 = \frac{I}{c} \tag*{Radiation pressure Eq. (9.64)}\\
+& \ev{u} = \frac{1}{4} \text{Re} \left( \ce \cdot \ce^* + \frac{1}{\mo} \cb \cdot \cb^*  \right) \tag*{Complex time-average energy density Pr. (9.12)}\\
+& \ev{\vect{S}} = \frac{1}{2 \mo} \text{Re} \left( \ce \times \cb^* \right) \tag*{Complex time-average Poynting vector Pr. (9.12)}\\
+&\vect{g} = \epsilon_0(\vect{E} \times \vect{B}), \quad \vect{g} = (\vect{D} \times \vect{B})  \tag*{Linear momentum density in vacuum and in linear media Eq. (8.32, 8.48)} \\
+\intertext{Propogation in Linear Media}
+& u = \frac{1}{2} \left( \vect{E} \cdot \vect{D} + \vect{B} \cdot \vect{H} \right) \tag*{Energy density in linear media (HW12)} \\
+& \vect{S} = \vect{E} \times \vect{H} \tag*{Poynting vector in materials (HW13)} \\
+& n\equiv \sqrt{\frac{\epsilon \mu}{\eo \mo}} \cong \sqrt{\epsilon_r} \tag*{Definition index of refraction Eq. (9.69)} \\
+&\begin{cases*}
+\text{(i)} \quad \epsilon_1 E_1^\perp - \epsilon_2 E_2^\perp = \sigma_f , \quad \text{(iii)} \quad \vect{E}_1^\parallel = \vect{E}_2^\parallel, \\
+\text{(ii)} \quad  B_1^\perp = B_2^\perp , \qquad \qquad \text{(iv)} \quad \frac{1}{\mu_1} \vect{B}_1^\parallel - \frac{1}{\mu_2} \vect{B}_2^\parallel = \vect{K}_f \times \nhat \\
+\end{cases*} \tag*{Electrodynamic boundary conditions (9.74)}
+\intertext{Reflection and Transmission in Linear Materials}
+&\text{ Reflected waves: If $n_1 > n_2$ the reflected wave is in phase} \\
+& k_I \sin \theta_I = k_R \sin \theta_R = k_T \sin \theta_T \tag*{First law of optics Eq. (9.98)}\\
+& n_1 \sin \theta_T = n_2\sin \theta_I \tag*{Third law of optics (Snell's)(Law of refraction) Eq. (9.100)}\\
+& R + T = 1 \tag*{Reflection and transmission relation. Eq. (9.88)}\\
+& R \equiv \frac{I_R}{I_I}  =  \left( \frac{\tilde{E}_{0_R}}{\tilde{E}_{0_I}} \right)^2, \quad T \equiv \frac{I_T}{I_I} = \frac{\epsilon_2 v_2}{\epsilon_1 v_1}\left( \frac{\tilde{E}_{0_T}}{\tilde{E}_{0_I}} \right)^2 \frac{\cos \theta_T}{\cos \theta_I} \tag*{Reflection and Transmission coefficient Eq. (9.86-9.87)} \\
+\intertext{Reflection and Transmission in Linear Materials (cont.)}
+& \frac{\tilde{E}_{0_R}}{\tilde{E}_{0_I}} = \left( \frac{\alpha - \beta}{\alpha + \beta} \right), \quad \frac{\tilde{E}_{0_T}}{\tilde{E}_{0_I}} = \left( \frac{2}{\alpha + \beta}\right) \tag*{Fresnel, polarization in incident plane  (9.109)}\\
+&\frac{\tilde{E}_{0_R}}{\tilde{E}_{0_I}} = \left| \frac{1-\alpha\beta}{1+\alpha\beta} \right|, \quad \frac{\tilde{E}_{0_T}}{\tilde{E}_{0_I}} = \left( \frac{2}{1+\alpha\beta} \right) \tag*{Fresnel, polarization perp. to incident plane (HW13)}\\
+& \alpha \equiv \frac{\cos \theta_T}{\cos_I} = \frac{\sqrt{1 - [(n_1/n_2)\sin\theta_I]^2}}{\cos\theta_I}, \quad \beta \equiv \frac{\mu_1 v_1}{\mu_2 v_2} = \frac{\mu_1 n_2}{\mu_2 n_1}	\tag*{Eq. (9.108, 9.110, 9.106)}\\
+&\tan \theta_B \cong \frac{n_2}{n_1} \tag*{Brewster's angle $(\mu_1 \cong \mu_2)$ Eq. (9.112)}\\
+\intertext{Electromagnetic Waves in Conductors}
+&\ce(z, t) = \tilde{E_0}e^{-\kappa z}e^{i(kz-wt)} \xhat \tag*{Transverse E field in conductor Eq. (9.130)} \\
+&\cb(z, t) = \frac{\tilde{k}}{\omega} \tilde{E_0}e^{-\kappa z}e^{i(kz-wt)} \yhat = \left( \frac{\kappa + ik}{\omega}\right) \left(\zhat \times \ce\right)  \tag*{Transverse B field Eq. (9.131)}\\
+& k \equiv \omega \sqrt{\frac{\epsilon \mu}{2}}\left[ \sqrt{1 + \left(\frac{\sigma}{\epsilon \omega}\right)^2} + 1  \right]^{1/2}, \quad \kappa \equiv \omega \sqrt{\frac{\epsilon \mu}{2}}\left[ \sqrt{1 + \left(\frac{\sigma}{\epsilon \omega}\right)^2} - 1 \right]^{1/2} \tag*{Complex $\tilde{k}$ components Eq. (9.126)} \\
+& \tilde{k} = \kappa + ik \cong \sqrt{\frac{\mu \sigma \omega}{2}}(1+i) \tag*{Complex wavenumber for ``Good Conductor'' Eq. (9.125)}\\
+& \tilde{k} = Ke^{i\phi} \tag*{Complex wavenumber expressed as modulus and phase Eq (9.132)}\\
+& K \equiv |\tilde{k}| = \sqrt{k^2+ \kappa^2} = \omega\sqrt{\epsilon \mu \sqrt{1+\left( \frac{\sigma}{\epsilon \omega} \right)^2}} \tag*{Modulus of complex wavenumber (Eq. 9.133)} \\
+& \phi \equiv \arctan(\kappa/k) \tag*{Phase of complex wavenumber Eq. (9.134)} \\
+& B_0 e^{i \delta_B} = \frac{Ke^{i\phi}}{\omega}E_0e^{i \delta_E}, \quad \delta_B - \delta_E = \phi, \quad  \frac{B_0}{E_0} = \frac{K}{\omega} \tag*{Amplitude relations for E and B Eq. (9.135-9.136)}\\
+& d \equiv \frac{1}{\kappa} \tag*{Skin depth Eq. (9.128)}\\
+\intertext{Reflection at a Conducting Surface}
+&\frac{\tilde{E}_{0_R}}{\tilde{E}_{0_I}} = \left( \frac{1 - \tilde{\beta}}{1 + \beta} \right), \quad \frac{\tilde{E}_{0_T}}{\tilde{E}_{0_I}} = \left( \frac{2}{1 + \beta} \right) \tag*{Reflected/transmitted E fields Eq. (9.147)} \\
+& \tilde{\beta} \equiv \frac{\mu_1 v_1}{\mu_2 \omega} \tilde{k}_2 \tag*{For above, Eq. (9.146)} \\
+& \left| \frac{\tilde{E}_{0_R}}{\tilde{E}_{0_I}} \right|^2 = \left( \frac{E_{0_R}}{E_{0_I}} \right)^2 \tag*{Relation between real and complex reflection coefficient (HW15)} \\
+\intertext{Frequency Dependence of Permittivity}
+& v = \frac{\omega}{k}, \qquad v_g = \tder{\omega}{k} \tag*{Phase and group velocity Eq. (9.149, 9.150)} \\
+& n= \frac{ck}{\omega} \cong 1 + \frac{Nq^2}{2m\eo} \sum_j \frac{f_j \left( \omega_j^2 - \omega^2 \right)}{\left( \omega_j^2 - \omega^2 \right) + \gamma_j^2 \omega^2} \tag*{Frequency-dependent index of refraction for dielectrics Eq. (9.170)} \\
+& n \cong -\delta \frac{Nq^2}{\eo m} \sum_j \frac{f_j}{\gamma_j^2 w_j} \tag*{Index of refraction, Case: $\omega = \omega_j + \delta$ with $\delta << \omega_j$ and $d << \gamma_j$ (R. Ch09k, pg 4)}\\
+& \alpha \equiv 2 \kappa \cong \frac{Nq^2\omega^2}{m\eo c} \sum_j \frac{f_j \gamma_j}{\left( \omega_j^2 - \omega^2 \right) + \gamma_j^2 \omega^2} \tag*{Frequency-dependent absorbtion coefficient for dielectrics Eq. (9.171)}\\
+& \alpha \cong \frac{Nq^2}{c\eo m} \sum_j \frac{f_j \left( 1 + \frac{2 \delta}{\omega_j} \right)}{\gamma_j} \left( 1 - \frac{4 \delta^2}{\gamma_j^2} \right) \tag*{Absorption, Case: $\omega = \omega_j + \delta$ with $\delta << \omega_j$ and $d << \gamma_j$ (R. Ch09k, pg 7)}\\
+& \tilde{\sigma}(\omega) = \frac{n}{m}\left( \frac{q^2}{\gamma - i \omega} \right) \tag*{Complex conductivity (HW16)}
+\end{align*}
+
+
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}
