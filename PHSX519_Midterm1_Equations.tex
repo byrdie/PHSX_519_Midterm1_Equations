@@ -81,17 +81,16 @@
 
  
 \begin{document}
-% --------------------------------------------------------------
-%                         Start here
-% --------------------------------------------------------------
-%\title{Exam 1 Equations}%replace X with the appropriate number
-%\author{Roy Smart \\%replace with your name
-%PHSX425 Electricity \& Magnetism II} %if necessary, replace with your course title
-%\maketitle
+\setlength{\abovedisplayskip}{0pt}
+\setlength{\belowdisplayskip}{0pt}
+\setlength{\abovedisplayshortskip}{0pt}
+\setlength{\belowdisplayshortskip}{0pt}
 \begin{align*}
 & \vect{E}(\vect{x}) = \frac{1}{4 \pi \eo} \int \rho(\vect{x}') \frac{\vect{x} - \vect{x}'}{|\vect{x} - \vect{x}'|^3} d^3x' \tag*{Coulomb's Law (1.5)} \\
 & \delta(f(x)) = \sum_{i} \frac{1}{\left|\tder{f}{x}(x_i)\right|}\delta(x - x_i)	\tag*{Delta function Rule 5 } \\
 & \oint_S \vc{E} \cdot \vc{n} \; da = \frac{1}{\eo} \int_V \rho(\vc{x}) d^3x	\tag*{Gauss' Law (1.11)} \\
+& \vc{\nabla} \times \vc{E} = 0	\tag*{Curl of electric field (1.14)} \\
+& \vc{E} = -\vc{\nabla} \Phi	\tag*{Electric field in terms of scalar potential (1.16)} \\
 & \Phi(\vc{x}) = \K \int \frac{\rho (\vc{x}')}{|\vc{x} - \vc{x}'|} d^3 x' \tag*{Scalar potential in terms of charge density (1.17)} \\
 & (\vc{E_2} - \vc{E_1}) \cdot \vc{n} = \sigma/\eo	\tag*{Electric field of a surface distribution (1.22)} \\
 & \nabla^2 \Phi = -\rho/\eo	\tag*{Poisson Equation (1.28)}\\
@@ -101,24 +100,31 @@
 & \Phi(\vc{x}) = \K \int_V \rho(\vc{x}') G_D(\vc{x}, \vc{x}') d^3x' = \frac{1}{4 \pi} \oint_S(\vc{x}') \pder{G_D}{n'} da'	\tag*{Green's function potential Dirichlet B.C.s (1.44)} \\
 & \Phi(\vc{x}) = \langle\Phi\rangle_S + \K \int_V \rho(\vc{x}') G_N(\vc{x},\vc{x}') d^3x + \frac{1}{4 \pi} \oint_S \pder{\Phi}{n'} G_N da'	\tag*{Green's function potential Neumann B.C.s (1.46)} \\
 & W = \frac{\eo}{2} \int |\vc{\nabla} \Phi|^2 d^3x = \frac{\eo}{2} \int \left| \vc{E} \right|^2 d^3 x	\tag*{Energy stored in electric field (1.54)} \\
-& V_i = \sum_{j=1}^{n} p_{ij} q_j, \; (i = 1,2,...,n)	\tag*{Potentials on conductors in terms of the inverse capacitance matrix.} \\
-& Q_i = \sum_{j=1}^{n} C_{ij} V_j, \; (i=1,2,...,n) \tag*{Charges on conductors in terms of the capactiance matrix (1.62)} \\
+& V_i = \sum_{j=1}^{n} p_{ij} q_j, \; (i = 1,2,...,n)	
+\qquad Q_i = \sum_{j=1}^{n} C_{ij} V_j, \; (i=1,2,...,n) \tag*{Capactiance matrix (1.62)} \\
 & W = \frac{1}{2} \sum_{i=1}^{n} Q_i V_i = \frac{1}{2} \sum_{i=1}^n \sum_{j=1}^{n} C_{ij} V_i V_j	\tag*{Potential energy of conductor system (1.62)} \\
 & q' = -\frac{a}{y} q, \quad y' = \frac{a^2}{y}		\tag*{Magnitude and position of image charge on sphere (2.4)} \\
-& \Phi = -E_0 \left( r - \frac{a^3}{r^2} \right)	\tag*{Electric field of conducting sphere in uniform Electric field (2.14)} \\
+& \Phi = -E_0 \left( r - \frac{a^3}{r^2} \right)	\tag*{Scalar potential of conducting sphere in uniform Electric field (2.14)} \\
 & \frac{1}{|\vc{x} - \vc{x}'|} = 4 \pi \sum_{\ell = 0}^\infty \sum_{m = -\ell}^{\ell} \frac{1}{2 \ell +1} \frac{r_<^\ell}{r_>^{\ell +1}} Y_{\ell m}^*(\theta', \phi') Y_{\ell m}(\theta,\phi)	\tag*{Green's function expansion in spherical coordinates (3.70)} \\
 & \text{Where $r_< (r_>)$ is the smaller (larger) of $|\vc{x}|$ and $|\vc{x}'|$}
 \end{align*}
 
-{\renewcommand{\arraystretch}{1.4}
+{\renewcommand{\arraystretch}{1.5}
 \begin{tabular}{| l | c | c |} \hline
 & Wiggly & Decaying \\ \hline
 Cartesian &$ e^{\pm i k_n x}, \; A \cos(k_n x) + B\sin(k_n x)$ & $e^{\pm k_n x}, \; A \cosh( k_n x) + B \sinh(k_n x)$ \\ \hline
-Cylindrical (3D)& $e^{i m \phi}, \; J_m(k_n \rho), \; Y_m(k_n \rho)$ & $I_m(k_n \rho), \; K_m(k_n \rho)$ \\ \hline
+Cylindrical (3D)& $e^{i m \phi}, \; A J_m(k_n \rho) + B Y_m(k_n \rho)$ & $ A I_m(k_n \rho) + B K_m(k_n \rho)$ \\ \hline
 Cylindrical (2D)& $e^{i m \phi}$ & $A_0 + B_0 \ln \rho + \sum A_m \rho^m + B_m \rho^{-m}$ \\ \hline
 Spherical ($\phi$ symmetry) & $P_\ell(\cos \theta)$ & $A \left( \frac{r}{a} \right)^\ell + B \big( \frac{r}{a} \big)^{-(\ell+1)} $ \\ \hline
 Spherical (No $\phi$ symmetry) & $Y_{\ell m}(\theta, \phi)$ &  $A \left( \frac{r}{a} \right)^\ell + B \big( \frac{r}{a} \big)^{-(\ell+1)} $ \\ \hline
 \end{tabular}
+
+\begin{align*}
+& \int_{0}^{L} \sin \left( \frac{n \pi x}{L} \right)  \sin \left( \frac{m \pi x}{L} \right) dx = \frac{L}{2} \delta_{nm} 
+\qquad \int_{0}^{L} \sin \left( \frac{n \pi x}{L} \right)  \cos \left( \frac{m \pi x}{L} \right) dx = \frac{L n [1 + \cos(n \pi)]}{\pi (n^2 -1)} \\
+& \int_{0}^{2 \pi} d \phi \int_{0}^{L} dz e^{i(m - m') \phi} e^{i \frac{2 \pi}{L}(n -n')z} = 2 \pi L \delta_{m'm} \delta_{n'n} \\
+& J_m(k \rho) \propto (k \rho)^m \quad Y_m(k \rho) \propto (k \rho)^{-m} \quad I_m(k \rho) \propto (k \rho)^m \quad K_m(k \rho) \propto (k \rho)^{-m} \tag*{As their argument approaches zero}
+\end{align*}
 
 
 % --------------------------------------------------------------
